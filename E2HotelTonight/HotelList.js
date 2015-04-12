@@ -9,6 +9,7 @@ var {
   ScrollView,
   StyleSheet,
   TouchableHighlight,
+  AlertIOS
 } = React;
 
 var HotelList = React.createClass({
@@ -21,10 +22,16 @@ var HotelList = React.createClass({
     };
   },
 
+  _pressRow: function() {
+    AlertIOS.alert('console.log?', 'NO!');
+  },
+
   _renderRow: function(rowData) {
     return (
       <View style={styles.rowContainer}>
-        <TouchableHighlight style={styles.rowButton}>
+        <TouchableHighlight
+          onPress={() => this._pressRow()}
+          style={styles.rowButton}>
           <Text>{rowData}</Text>
         </TouchableHighlight>
       </View>
