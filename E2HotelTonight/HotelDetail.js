@@ -25,6 +25,7 @@ var HotelDetail = React.createClass({
 var styles = StyleSheet.create({
   container: {
     backgroundColor: 'aqua',
+    marginTop: 65, //important
   },
 })
 
