@@ -24,7 +24,9 @@ var HotelList = React.createClass({
   _renderRow: function(rowData) {
     return (
       <View style={styles.rowContainer}>
-        <Text>{rowData}</Text>
+        <TouchableHighlight style={styles.rowButton}>
+          <Text>{rowData}</Text>
+        </TouchableHighlight>
       </View>
     )
   },
@@ -48,8 +50,15 @@ var styles = StyleSheet.create({
     backgroundColor: 'pink',
   },
   rowContainer: {
-    flex: 1,
+    flexDirection: 'row',
+    height: 60,
     backgroundColor: 'blue',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  rowButton: {
+    justifyContent: 'center',
+    backgroundColor: 'cyan',
   }
 
 })
