@@ -19,7 +19,7 @@ var HomeScreen = React.createClass({
       <View style={styles.container}>
         <View style={styles.spacer} />
         <SearchBar />
-        <HotelList />
+        <HotelList navigator={this.props.navigator}/>
       </View>
     );
   }

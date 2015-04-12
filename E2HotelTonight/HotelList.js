@@ -12,6 +12,8 @@ var {
   AlertIOS
 } = React;
 
+var HotelDetail = require('./HotelDetail');
+
 var HotelList = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({
@@ -23,7 +25,12 @@ var HotelList = React.createClass({
   },
 
   _pressRow: function() {
-    AlertIOS.alert('console.log?', 'NO!');
+    // AlertIOS.alert('console.log?', 'NO!');
+    this.props.navigator.push({
+      title: 'Hotel Detail',
+      component: HotelDetail,
+      passProps: {}
+    });
   },
 
   _renderRow: function(rowData) {
