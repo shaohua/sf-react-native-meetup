@@ -10,15 +10,10 @@ var {
   TouchableHighlight,
 } = React;
 
-var SearchBar = require('./SearchBar');
-var HotelList = require('./HotelList');
-
-var HomeScreen = React.createClass({
+var SearchBar = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <SearchBar />
-        <HotelList />
       </View>
     );
   }
@@ -27,8 +22,8 @@ var HomeScreen = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: 'black',
   }
 })
 
-module.exports = HomeScreen;
+module.exports = SearchBar;
