@@ -21,13 +21,21 @@ var HotelList = React.createClass({
     };
   },
 
+  _renderRow: function(rowData) {
+    return (
+      <View style={styles.rowContainer}>
+        <Text>{rowData}</Text>
+      </View>
+    )
+  },
+
 
   render: function() {
     return (
       <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData}</Text>}
+          renderRow={this._renderRow}
         />
       </View>
     );
@@ -38,7 +46,12 @@ var styles = StyleSheet.create({
   container: {
     flex: 10,
     backgroundColor: 'pink',
+  },
+  rowContainer: {
+    flex: 1,
+    backgroundColor: 'blue',
   }
+
 })
 
 module.exports = HotelList;
