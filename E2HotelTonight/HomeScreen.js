@@ -17,6 +17,7 @@ var HomeScreen = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
+        <View style={styles.spacer} />
         <SearchBar />
         <HotelList />
       </View>
@@ -27,7 +28,9 @@ var HomeScreen = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+  },
+  spacer: {
+    height: 65,
   }
 })
 

@@ -21,7 +21,7 @@ var HotelList = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    flex: 5,
+    flex: 10,
     backgroundColor: 'pink',
   }
 })
