@@ -14,6 +14,7 @@ var {
 } = React;
 
 var ChatTab = require('./ChatTab');
+var ContactTab = require('./ContactTab');
 
 var tabs = {
   chat: 'chatTab',
@@ -25,7 +26,7 @@ var tabs = {
 var E3WeChat = React.createClass({
   getInitialState: function() {
     return {
-      selectedTab: tabs.chat,
+      selectedTab: tabs.contact,
       notifCount: 0,
       presses: 0,
     };
@@ -63,7 +64,7 @@ var E3WeChat = React.createClass({
               selectedTab: tabs.contact,
             });
           }}>
-          {this._renderContent('#414A8C', tabs.contact)}
+          <ContactTab />
         </TabBarIOS.Item>
 
         <TabBarIOS.Item
