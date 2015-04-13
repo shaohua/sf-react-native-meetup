@@ -13,10 +13,19 @@ var {
   TabBarIOS,
 } = React;
 
+var ChatTab = require('./ChatTab');
+
+var tabs = {
+  chat: 'chatTab',
+  contact: 'contactTab',
+  discover: 'discoverTab',
+  me: 'meTab',
+};
+
 var E3WeChat = React.createClass({
   getInitialState: function() {
     return {
-      selectedTab: 'redTab',
+      selectedTab: tabs.chat,
       notifCount: 0,
       presses: 0,
     };
@@ -32,13 +41,6 @@ var E3WeChat = React.createClass({
     },
 
   render: function() {
-    var tabs = {
-      chat: 'chatTab',
-      contact: 'contactTab',
-      discover: 'discoverTab',
-      me: 'meTab',
-    };
-
     return (
       <TabBarIOS>
         <TabBarIOS.Item
@@ -49,7 +51,7 @@ var E3WeChat = React.createClass({
               selectedTab: tabs.chat,
             });
           }}>
-          {this._renderContent('#214A8C', tabs.chat)}
+          <ChatTab />
         </TabBarIOS.Item>
 
         <TabBarIOS.Item
