@@ -86,6 +86,8 @@ var styles = StyleSheet.create({
   rowContainer: {
     flexDirection: 'row',
     height: 50,
+    borderBottomWidth: 1,
+    borderColor: 'silver'
   },
   rowButton: {
     flex: 3,
@@ -110,7 +112,7 @@ var styles = StyleSheet.create({
   text: {
     justifyContent: 'center',
     marginLeft: 10,
-  }
+  },
 });
 
 module.exports = ContactTabMain;
