@@ -21,7 +21,7 @@ var ContactDetail = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text>test</Text>
+        <Text>{this.props.rowData}</Text>
       </View>
     );
   }
