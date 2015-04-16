@@ -31,12 +31,12 @@ var ContactTabMain = React.createClass({
     };
   },
 
-  _pressRow: function() {
+  _pressRow: function(rowData) {
     // AlertIOS.alert('console.log?', 'NO!');
     this.props.navigator.push({
       title: 'Contact Detail',
       component: ContactDetail,
-      passProps: {}
+      passProps: {rowData: rowData}
     });
   },
 
@@ -44,7 +44,7 @@ var ContactTabMain = React.createClass({
     return (
       <View style={styles.rowContainer}>
         <TouchableHighlight
-          onPress={() => this._pressRow()}
+          onPress={() => this._pressRow(rowData)}
           underlayColor='deepskyblue'
           style={styles.rowButton}>
           <Text>{rowData}</Text>
