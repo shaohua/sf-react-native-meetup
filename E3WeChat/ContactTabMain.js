@@ -7,6 +7,7 @@
 var React = require('react-native');
 var {
   StyleSheet,
+  Image,
   Text,
   View,
   NavigatorIOS,
@@ -47,7 +48,16 @@ var ContactTabMain = React.createClass({
           onPress={() => this._pressRow(rowData)}
           underlayColor='deepskyblue'
           style={styles.rowButton}>
-          <Text>{rowData}</Text>
+          <View style={styles.rowImageWithText}>
+            <Image
+              source={{
+                uri: 'http://placehold.it/40x40'
+              }}
+              style={styles.image} />
+            <View style={styles.text}>
+              <Text>{rowData}</Text>
+            </View>
+          </View>
         </TouchableHighlight>
         <View style={styles.rowAction}>
           <Text>Call</Text>
@@ -79,8 +89,11 @@ var styles = StyleSheet.create({
   },
   rowButton: {
     flex: 3,
-    alignItems: 'center',
     justifyContent: 'center',
+  },
+  rowImageWithText: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   rowAction: {
     flex: 1,
@@ -89,6 +102,14 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     margin: 5,
+  },
+  image: {
+    width: 40,
+    height: 40,
+  },
+  text: {
+    justifyContent: 'center',
+    marginLeft: 10,
   }
 });
 
