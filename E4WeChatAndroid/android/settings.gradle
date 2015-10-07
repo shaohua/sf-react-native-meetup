@@ -1,0 +1,3 @@
+rootProject.name = 'E4WeChatAndroid'
+
+include ':app'
