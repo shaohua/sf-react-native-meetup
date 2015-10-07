@@ -8,6 +8,7 @@ var React = require('react-native');
 var {
   AppRegistry,
   StyleSheet,
+  ToolbarAndroid,
   Text,
   View,
 } = React;
@@ -16,6 +17,9 @@ var E4WeChatAndroid = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
+        <ToolbarAndroid
+          style={styles.toolbar}
+          title='WeChat Android' />
         <Text style={styles.welcome}>
           Welcome to React Native!!!!!
         </Text>
@@ -34,7 +38,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -46,6 +50,9 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  toolbar: {
+    height: 56,
   },
 });
 
