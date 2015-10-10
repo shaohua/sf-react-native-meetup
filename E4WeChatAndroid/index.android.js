@@ -15,6 +15,9 @@ var {
 } = React;
 
 var E4WeChatAndroid = React.createClass({
+  onActionSelected: function () {
+  },
+
   render: function() {
     var navigationView = (
       <View style={{flex: 1, backgroundColor: '#fff'}}>
@@ -32,6 +35,8 @@ var E4WeChatAndroid = React.createClass({
         <ToolbarAndroid
           navIcon={require('image!ic_menu_white')}
           onIconClicked={() => this.drawer.openDrawer()}
+          actions={[{title: 'Settings', icon: require('image!ic_menu_white'), show: 'always'}]}
+          onActionSelected={this.onActionSelected}
           style={styles.toolbar}
           title='WeChat Android' />
 
