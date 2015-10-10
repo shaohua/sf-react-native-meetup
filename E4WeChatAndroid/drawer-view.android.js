@@ -8,6 +8,7 @@ var {
   View,
 } = React;
 var styles = require('./styles');
+var DrawerNavigationView = require('./drawer-navigation-view');
 
 var DrawerView = React.createClass({
   render: function() {
@@ -17,11 +18,7 @@ var DrawerView = React.createClass({
         ref={(drawer) => { localDrawer = drawer; }}
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => (
-          <View style={{flex: 1, backgroundColor: '#fff'}}>
-            <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I am in the Drawer!</Text>
-          </View>
-        )}>
+        renderNavigationView={() => <DrawerNavigationView />} >
 
         <ToolbarAndroid
           navIcon={require('image!ic_menu_white')}
