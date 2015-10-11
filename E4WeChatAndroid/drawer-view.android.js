@@ -22,6 +22,7 @@ var DrawerView = React.createClass({
           <DrawerNavigationView navigator={this.props.navigator}/>} >
 
         <ToolbarAndroid
+          logo={require('image!ic_logo')}
           navIcon={require('image!ic_menu_white')}
           onIconClicked={() => localDrawer.openDrawer()}
           style={styles.toolbar}

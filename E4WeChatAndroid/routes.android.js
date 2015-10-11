@@ -2,13 +2,26 @@
 
 var React = require('react-native');
 var {
+  BackAndroid,
   Text,
   View,
 } = React;
 var styles = require('./styles');
 var DrawerView = require('./drawer-view');
 
+var rnNavigator;
+BackAndroid.addEventListener('hardwareBackPress', () => {
+  if (rnNavigator && rnNavigator.getCurrentRoutes().length > 1) {
+    rnNavigator.pop();
+    return true;
+  }
+  return false;
+});
+
 var Routes = function (route, navigationOperations, onComponentRef) {
+  // connect to hardwareBackPress
+  rnNavigator = navigationOperations;
+
   switch (route.path) {
     case 'home':
     case 'addNewItem':
