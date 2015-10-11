@@ -25,6 +25,10 @@ var styles = StyleSheet.create({
   toolbar: {
     height: 56,
   },
+  logo: {
+    width: 100,
+    height: 100
+  }
 });
 
 module.exports = styles;

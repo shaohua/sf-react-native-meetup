@@ -11,6 +11,7 @@ var styles = require('./styles');
 var DrawerNavigationView = require('./drawer-navigation-view');
 var AddItem = require('./add-item');
 var ItemList = require('./item-list');
+var ItemDetail = require('./item-detail');
 
 var DrawerView = React.createClass({
   getChildren: function(path) {
@@ -20,6 +21,8 @@ var DrawerView = React.createClass({
         return (<AddItem />);
       case 'itemList':
         return (<ItemList />);
+      case 'itemDetail':
+        return (<ItemDetail />);
       default:
         return (
           <View>
