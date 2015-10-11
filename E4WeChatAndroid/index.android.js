@@ -22,7 +22,7 @@ var styles = require('./styles');
 var E4WeChatAndroid = React.createClass({
   render: function() {
     var initialRoute = {
-      name: 'home'
+      path: 'home'
     };
 
     return (

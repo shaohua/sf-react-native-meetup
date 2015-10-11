@@ -9,14 +9,18 @@ var styles = require('./styles');
 var DrawerView = require('./drawer-view');
 
 var Routes = function (route, navigationOperations, onComponentRef) {
-  switch (route.name) {
+  switch (route.path) {
     case 'home':
-    case 'list':
+    case 'addNewItem':
+    case 'itemList':
+    case 'itemDetail':
       return (
-        <DrawerView />
+        <DrawerView
+          path={route.path}
+          navigator={navigationOperations} />
       );
       break;
-    case 'item':
+    case 'splash':
       return (
         <View style={styles.container}>
           <Text style={styles.instructions}>

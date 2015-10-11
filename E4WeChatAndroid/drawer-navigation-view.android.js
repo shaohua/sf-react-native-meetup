@@ -12,14 +12,22 @@ var {
 var styles = require('./styles');
 
 var DrawerNavigationView = React.createClass({
+  selectMenuItem: function(menuItem) {
+    this.props.navigator.push({
+      title: menuItem.title,
+      path: menuItem.path
+    });
+  },
+
   renderMenuItem: function(menuItem) {
     return (
       <TouchableHighlight
+        onPress={() => this.selectMenuItem(menuItem)}
         style={{
           height: 60,
           padding: 30
         }} >
-        <Text>{menuItem.text}</Text>
+        <Text>{menuItem.title}</Text>
       </TouchableHighlight>
     );
   },
@@ -35,23 +43,23 @@ var DrawerNavigationView = React.createClass({
           dataSource={dataSource.cloneWithRows([
             {
               id: 1,
-              text: 'Featured',
-              link: 'featured'
+              title: 'Add New Item',
+              path: 'addNewItem'
             },
             {
               id: 2,
-              text: 'Insight',
-              link: 'insight'
+              title: 'Item List',
+              path: 'itemList'
             },
             {
               id: 3,
-              text: 'Opinion',
-              link: 'opinion'
+              title: 'Item Detail',
+              path: 'itemDetail'
             },
             {
               id: 4,
-              text: 'Story',
-              link: 'story'
+              title: 'Splash',
+              path: 'splash'
             },
           ])}
           renderRow={this.renderMenuItem}

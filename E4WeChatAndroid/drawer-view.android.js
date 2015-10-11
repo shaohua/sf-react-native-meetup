@@ -18,15 +18,14 @@ var DrawerView = React.createClass({
         ref={(drawer) => { localDrawer = drawer; }}
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <DrawerNavigationView />} >
+        renderNavigationView={() =>
+          <DrawerNavigationView navigator={this.props.navigator}/>} >
 
         <ToolbarAndroid
           navIcon={require('image!ic_menu_white')}
           onIconClicked={() => localDrawer.openDrawer()}
-          actions={[{title: 'Settings', icon: require('image!ic_menu_white'), show: 'always'}]}
-          onActionSelected={this.onActionSelected}
           style={styles.toolbar}
-          title='WeChat Android' />
+          title={this.props.path} />
 
         <View style={styles.container}>
           <Text style={styles.welcome}>
