@@ -9,8 +9,23 @@ var {
 } = React;
 var styles = require('./styles');
 var DrawerNavigationView = require('./drawer-navigation-view');
+var AddItem = require('./add-item');
 
 var DrawerView = React.createClass({
+  getChildren: function(path) {
+    var children;
+    switch (path) {
+      case 'addItem':
+        return (<AddItem />);
+      default:
+        return (
+          <View>
+            <Text>{path}</Text>
+          </View>
+        );
+    }
+  },
+
   render: function() {
     var localDrawer;
     return (
@@ -28,14 +43,7 @@ var DrawerView = React.createClass({
           style={styles.toolbar}
           title={this.props.path} />
 
-        <View style={styles.container}>
-          <Text style={styles.welcome}>
-          Welcome to React Native!!!!!
-          </Text>
-          <Text style={styles.instructions}>
-          To get started, edit index.android.js
-          </Text>
-        </View>
+        {this.getChildren(this.props.path)}
 
       </DrawerLayoutAndroid>
     );

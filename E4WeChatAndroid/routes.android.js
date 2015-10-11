@@ -24,7 +24,7 @@ var Routes = function (route, navigationOperations, onComponentRef) {
 
   switch (route.path) {
     case 'home':
-    case 'addNewItem':
+    case 'addItem':
     case 'itemList':
     case 'itemDetail':
       return (

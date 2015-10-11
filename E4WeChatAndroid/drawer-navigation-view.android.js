@@ -43,8 +43,8 @@ var DrawerNavigationView = React.createClass({
           dataSource={dataSource.cloneWithRows([
             {
               id: 1,
-              title: 'Add New Item',
-              path: 'addNewItem'
+              title: 'Add Item',
+              path: 'addItem'
             },
             {
               id: 2,
