@@ -27,6 +27,7 @@ var E4WeChatAndroid = React.createClass({
 
     return (
       <Navigator
+        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
         style={styles.container}
         initialRoute={initialRoute}
         renderScene={routes}
