@@ -8,6 +8,7 @@ var {
   View,
 } = React;
 var styles = require('./styles');
+var NavigationView = require('./navigation-view');
 
 var DrawerLayoutView = React.createClass({
   getChildren: function(path) {
@@ -20,6 +21,7 @@ var DrawerLayoutView = React.createClass({
         return (
           <View>
             <Text>main view</Text>
+            <Text></Text>
             <Text>{path}</Text>
           </View>
         );
@@ -34,9 +36,7 @@ var DrawerLayoutView = React.createClass({
         drawerWidth={200}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         renderNavigationView={() =>
-          <View navigator={this.props.navigator} style={styles.navigationView}>
-            <Text>NavigationView</Text>
-          </View>
+          <NavigationView navigator={this.props.navigator} />
         }
       >
 

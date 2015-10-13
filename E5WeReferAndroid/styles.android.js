@@ -32,6 +32,10 @@ var styles = StyleSheet.create({
   navigationView: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  navigationMenuItem: {
+    height: 60,
+    padding: 30,
   }
 });
 
