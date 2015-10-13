@@ -6,6 +6,7 @@ var {
   View,
 } = React;
 var styles = require('./styles');
+var DrawerLayoutView = require('./drawer-layout-view');
 
 var Routes = function (route, navigationOperations, onComponentRef) {
   switch (route.path) {
@@ -14,11 +15,9 @@ var Routes = function (route, navigationOperations, onComponentRef) {
     case 'itemList':
     case 'itemDetail':
       return (
-        <View style={styles.container}>
-          <Text style={styles.instructions}>
-            Routes for home / addItem etc.
-          </Text>
-        </View>
+        <DrawerLayoutView
+          path={route.path}
+          navigator={navigationOperations} />
       );
       break;
     case 'splash':

@@ -28,6 +28,10 @@ var styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100
+  },
+  navigationView: {
+    flex: 1,
+    backgroundColor: '#fff',
   }
 });
 
