@@ -36,6 +36,20 @@ var styles = StyleSheet.create({
   navigationMenuItem: {
     height: 60,
     padding: 30,
+  },
+  addItemView: {
+    alignItems: 'center',
+  },
+  addItemButton: {
+    width: 200,
+    height: 60,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1EACC7',
+  },
+  addItemButtonText: {
+    color: '#fff',
   }
 });
 

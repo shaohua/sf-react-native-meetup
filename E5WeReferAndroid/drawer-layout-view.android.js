@@ -9,12 +9,16 @@ var {
 } = React;
 var styles = require('./styles');
 var NavigationView = require('./navigation-view');
+var AddItemView = require('./add-item-view');
 
 var DrawerLayoutView = React.createClass({
   getChildren: function(path) {
     var children;
     switch (path) {
       case 'addItem':
+        return (
+          <AddItemView />
+        );
       case 'itemList':
       case 'itemDetail':
       default:
