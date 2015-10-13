@@ -10,6 +10,7 @@ var {
 var styles = require('./styles');
 var NavigationView = require('./navigation-view');
 var AddItemView = require('./add-item-view');
+var ItemDetailView = require('./item-detail-view');
 
 var DrawerLayoutView = React.createClass({
   getChildren: function(path) {
@@ -21,6 +22,9 @@ var DrawerLayoutView = React.createClass({
         );
       case 'itemList':
       case 'itemDetail':
+        return (
+          <ItemDetailView />
+        );
       default:
         return (
           <View>
