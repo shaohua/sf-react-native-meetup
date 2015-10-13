@@ -1,0 +1,3 @@
+rootProject.name = 'E5WeReferAndroid'
+
+include ':app'
